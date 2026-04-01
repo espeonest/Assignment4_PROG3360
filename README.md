@@ -8,4 +8,5 @@
 ```docker run -d -p 9411:9411 openzipkin/zipkin``` 
 
 ## Verify it's running
-docker ps
+
+```docker ps``` 
