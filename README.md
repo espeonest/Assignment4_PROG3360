@@ -3,6 +3,8 @@
 
 ## Part 5 Distributed Tracing with Zipkin 
 
+### Step 0: Zipkin Configuration already completed in the application.properties
+
 ### Step 1: Zipkin Quickstart (Terminal)
 
 ```docker run -d -p 9411:9411 openzipkin/zipkin``` 
