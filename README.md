@@ -21,9 +21,9 @@ Run the application
 
 Open Postman to run a few api calls to populate data for Zipkin to display
 
-GET http://localhost:8081/api/tenants
+``` GET http://localhost:8081/api/tenants ``` 
 
-POST http://localhost:8081/api/tenants
+``` POST http://localhost:8081/api/tenants``` 
 {
   "id": "205",
   "name": "Pam Halpert",
@@ -31,7 +31,8 @@ POST http://localhost:8081/api/tenants
   "email": "pam@gmail.com",
   "rent": 2000
 }
-POST http://localhost:8081/api/tenants
+
+``` POST http://localhost:8081/api/tenants``` 
 {
   "id": "204",
   "name": "Jim Halpert",
@@ -40,7 +41,7 @@ POST http://localhost:8081/api/tenants
   "rent": 2000
 }
 
-GET http://localhost:8081/api/tenants/205
+``` GET http://localhost:8081/api/tenants/205``` 
 
 ### Step 5: Open the Zipkin UI to View the Traces
 
