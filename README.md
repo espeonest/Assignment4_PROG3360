@@ -102,7 +102,11 @@ POST request:
 POST http://localhost:8081/api/tenants
 
 step 5: Custom metrics
-Todo
+Enter query:
+tenant_created_count_total
+POST request in postman
+POST http://localhost:8081/api/tenants
+you will see count increase 
 
 ## Part 4 Grafana Dashboards
 
