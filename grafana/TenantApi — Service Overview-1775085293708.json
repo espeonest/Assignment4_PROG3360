@@ -93,7 +93,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "process_uptime_seconds{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "process_uptime_seconds",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -148,7 +150,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{}[1m]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -211,7 +215,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[1m])) by (le))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -276,7 +282,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\",status=~\"5..\"}[5m])) / sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[5m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{status=~\"5..\"}[5m])) / sum(rate(http_server_requests_seconds_count[5m]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -339,7 +347,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(jvm_memory_used_bytes{application=\"TenantApi\",area=\"heap\"}) / sum(jvm_memory_max_bytes{application=\"TenantApi\",area=\"heap\"})",
+          "editorMode": "code",
+          "expr": "sum(jvm_memory_used_bytes{area=\"heap\"}) / sum(jvm_memory_max_bytes{area=\"heap\"})",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -402,7 +412,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "process_cpu_usage{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "process_cpu_usage",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -529,13 +541,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count[1m]))",
           "legendFormat": "Throughput",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[1m])) by (le))",
           "legendFormat": "p95 Latency",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -627,13 +643,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(jvm_memory_used_bytes{application=\"TenantApi\",area=\"heap\"})",
+          "editorMode": "code",
+          "expr": "sum(jvm_memory_used_bytes{area=\"heap\"})",
           "legendFormat": "Used",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "sum(jvm_memory_max_bytes{application=\"TenantApi\",area=\"heap\"})",
+          "editorMode": "code",
+          "expr": "sum(jvm_memory_max_bytes{area=\"heap\"})",
           "legendFormat": "Max",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -725,13 +745,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\",status=~\"4..\"}[1m])) by (status)",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{status=~\"4..\"}[1m])) by (status)",
           "legendFormat": "{{status}}",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\",status=~\"5..\"}[1m])) by (status)",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{status=~\"5..\"}[1m])) by (status)",
           "legendFormat": "{{status}}",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -823,23 +847,31 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\",method=\"POST\",uri=\"/api/tenants\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{method=\"POST\",uri=\"/api/tenants\"}[5m])",
           "legendFormat": "CREATE",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\",method=\"GET\",uri=\"/api/tenants\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{method=\"GET\",uri=\"/api/tenants\"}[5m])",
           "legendFormat": "LIST",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\",method=\"PUT\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{method=\"PUT\"}[5m])",
           "legendFormat": "UPDATE",
+          "range": true,
           "refId": "C"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\",method=\"DELETE\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{method=\"DELETE\"}[5m])",
           "legendFormat": "DELETE",
+          "range": true,
           "refId": "D"
         }
       ],
@@ -931,8 +963,10 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(jvm_gc_pause_seconds_count{application=\"TenantApi\"}[1m])",
+          "editorMode": "code",
+          "expr": "rate(jvm_gc_pause_seconds_count[1m])",
           "legendFormat": "{{action}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1024,18 +1058,24 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_threads_live_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_live_threads",
           "legendFormat": "Live",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "jvm_threads_daemon_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_daemon_threads",
           "legendFormat": "Daemon",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "jvm_threads_peak_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_peak_threads",
           "legendFormat": "Peak",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -1074,6 +1114,6 @@
   "timezone": "browser",
   "title": "TenantApi — Service Overview",
   "uid": "service-overview",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
