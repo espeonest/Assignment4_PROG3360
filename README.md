@@ -135,6 +135,10 @@ click dashboards then new then import
 
 import each of the grafana json files separately
 
+### Step 6
+
+replace all json uids' with with your current prometeus uid
+
 ## Part 5 Distributed Tracing with Zipkin 
 
 ### Step 0: Zipkin Configuration already completed in the application.properties
