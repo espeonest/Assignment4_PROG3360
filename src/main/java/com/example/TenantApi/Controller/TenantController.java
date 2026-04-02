@@ -3,16 +3,28 @@ package com.example.TenantApi.Controller;
 import com.example.TenantApi.Repository.Tenant;
 import com.example.TenantApi.Service.TenantService;
 import org.springframework.web.bind.annotation.*;
+import io.micrometer.core.instrument.MeterRegistry;
+import io.micrometer.core.instrument.Gauge;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 @RestController
 @RequestMapping("/api")
 public class TenantController {
 
     private final TenantService tenantService;
-    public TenantController(TenantService tenantService) {
+
+    public TenantController(TenantService tenantService, MeterRegistry meterRegistry) {
         this.tenantService = tenantService;
+        Gauge.builder("tenantapi.tenantcount", tenantCount()).
+                tag("version","v1").
+                description("").
+                register(meterRegistry);
+    }
+
+    public Supplier<Number> tenantCount() {
+        return ()->getTenants().size();
     }
 
     @GetMapping("/tenants")

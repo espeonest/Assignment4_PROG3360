@@ -3,11 +3,9 @@
 
 ## Part 1 Running the TenantApi
 
+### Step 1: Download repository
+
 Clone the GitHub repository in order to set up all the necessary TenantApi files.
-
-### Step 1: Run prometheus.exe
-
-Using an installation of Prometheus on your local machine, run prometheus.exe
 
 ### Step 2: Start TenantApi
 
@@ -27,6 +25,53 @@ Inside of a web browser or application such as Postman, send HTTP requests to lo
     "amountOwing" : float
 }
 ```
+
+## Part 2 Spring Boot Actuator
+
+Now that the API is up and running, the actuator endpoints have been configured to be exposed.
+
+### Health
+
+To see the health endpoint, go to:
+
+```http://localhost:8081/actuator/health```
+
+### Metrics
+
+For names of available metrics, go to:
+
+```http://localhost:8081/actuator/metrics```
+
+Metric #43 is our custom metric, named tenantapi.tenantcount. To view that metric, go to:
+
+```http://localhost:8081/actuator/metrics/tenantapi.tenantcount```
+
+As we have yet to add any tenants, its value will be 0.
+
+
+
+
+
+
+
+
+### Prometheus
+
+To see the raw Prometheus data, go to:
+
+```http://localhost:8081/actuator/prometheus```
+
+
+
+### Info
+
+To see the info endpoint, go to:
+
+```http://localhost:8081/actuator/info```
+
+## Install Prometheus
+
+From the official Prometheus site, make sure the correct version is installed for your machine. https://prometheus.io/download/
 
 ## Part 5 Distributed Tracing with Zipkin 
 
