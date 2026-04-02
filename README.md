@@ -104,6 +104,28 @@ POST http://localhost:8081/api/tenants
 step 5: Custom metrics
 Todo
 
+## Part 4 Grafana Dashboards
+
+### Step 0
+
+download the latest version of grafana at https://grafana.com/grafana/download?platform=windows 
+
+### Step 1
+
+go to http://localhost:3000 
+
+### Step 2
+
+login using username: admin and password: admin
+
+### Step 3
+
+click dashboards then new then import
+
+### Step 4
+
+import each of the grafana json files separately
+
 ## Part 5 Distributed Tracing with Zipkin 
 
 ### Step 0: Zipkin Configuration already completed in the application.properties
