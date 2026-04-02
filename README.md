@@ -93,6 +93,16 @@ Go to Graph tab
 Enter query:
 jvm_memory_used_bytes
 
+step 4: Validate HTTP Metrics
+Enter query:
+http_server_requests_seconds_count
+GET request:
+http://localhost:8081/api/tenants
+POST request:
+POST http://localhost:8081/api/tenants
+
+step 5: Custom metrics
+Todo
 
 ## Part 5 Distributed Tracing with Zipkin 
 
