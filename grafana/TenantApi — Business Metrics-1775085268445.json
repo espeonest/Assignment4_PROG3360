@@ -71,7 +71,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", uri=\"/api/tenants\", method=\"POST\", status=\"200\"}[24h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ uri=\"/api/tenants\", method=\"POST\", status=\"200\"}[24h]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -126,7 +128,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", uri=~\"/api/tenants/.*\", method=\"DELETE\", status=\"200\"}[24h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ uri=~\"/api/tenants/.*\", method=\"DELETE\", status=\"200\"}[24h]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -181,7 +185,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", uri=~\"/api/tenants/.*\", method=\"PUT\", status=\"200\"}[24h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ uri=~\"/api/tenants/.*\", method=\"PUT\", status=\"200\"}[24h]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -236,7 +242,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\"}[24h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{}[24h]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -328,28 +336,38 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", uri=\"/api/tenants\", method=\"POST\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ uri=\"/api/tenants\", method=\"POST\"}[5m])",
           "legendFormat": "CREATE",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", uri=\"/api/tenants\", method=\"GET\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ uri=\"/api/tenants\", method=\"GET\"}[5m])",
           "legendFormat": "GET ALL",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", uri=~\"/api/tenants/.*\", method=\"GET\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ uri=~\"/api/tenants/.*\", method=\"GET\"}[5m])",
           "legendFormat": "GET BY ID",
+          "range": true,
           "refId": "C"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", uri=~\"/api/tenants/.*\", method=\"PUT\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ uri=~\"/api/tenants/.*\", method=\"PUT\"}[5m])",
           "legendFormat": "UPDATE",
+          "range": true,
           "refId": "D"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", uri=~\"/api/tenants/.*\", method=\"DELETE\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ uri=~\"/api/tenants/.*\", method=\"DELETE\"}[5m])",
           "legendFormat": "DELETE",
+          "range": true,
           "refId": "E"
         }
       ],
@@ -412,31 +430,36 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", method=\"GET\", uri=\"/api/tenants\"}[1h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ method=\"GET\", uri=\"/api/tenants\"}[1h]))",
           "instant": true,
           "legendFormat": "List All",
           "refId": "A"
         },
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", method=\"GET\", uri=~\"/api/tenants/.*\"}[1h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ method=\"GET\", uri=~\"/api/tenants/.*\"}[1h]))",
           "instant": true,
           "legendFormat": "Get By ID",
           "refId": "B"
         },
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", method=\"POST\"}[1h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ method=\"POST\"}[1h]))",
           "instant": true,
           "legendFormat": "Create",
           "refId": "C"
         },
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", method=\"PUT\"}[1h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ method=\"PUT\"}[1h]))",
           "instant": true,
           "legendFormat": "Update",
           "refId": "D"
         },
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\", method=\"DELETE\"}[1h]))",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{ method=\"DELETE\"}[1h]))",
           "instant": true,
           "legendFormat": "Delete",
           "refId": "E"
@@ -531,8 +554,10 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", status=\"404\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ status=\"404\"}[5m])",
           "legendFormat": "404 - {{uri}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -624,13 +649,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", method=\"POST\", uri=\"/api/tenants\", status=\"200\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ method=\"POST\", uri=\"/api/tenants\", status=\"200\"}[5m])",
           "legendFormat": "New Tenants",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "rate(http_server_requests_seconds_count{application=\"TenantApi\", method=\"DELETE\", status=\"200\"}[5m])",
+          "editorMode": "code",
+          "expr": "rate(http_server_requests_seconds_count{ method=\"DELETE\", status=\"200\"}[5m])",
           "legendFormat": "Removed Tenants",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -662,13 +691,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-12h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "TenantApi — Business Metrics",
   "uid": "business-metrics",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
