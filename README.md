@@ -1,6 +1,33 @@
 # Assignment 4 PROG3360 Group 2 Chhetri,Hall,Turner,Rogers 
 # Domexa Rentals – Observability Task Force
 
+## Part 1 Running the TenantApi
+
+Clone the GitHub repository in order to set up all the necessary TenantApi files.
+
+### Step 1: Run prometheus.exe
+
+Using an installation of Prometheus on your local machine, run prometheus.exe
+
+### Step 2: Start TenantApi
+
+From IntelliJ (or a similar IDE), start the TenantApiApplication service. It should start running on port 8081.
+
+### Step 3: Test the API
+
+Inside of a web browser or application such as Postman, send HTTP requests to localhost:8081/api/tenants. The JSON structure for a new tenant is:
+
+```
+{
+    "id" : int,
+    "name" : string,
+    "address" : string,
+    "email" : string,
+    "rent" : float,
+    "amountOwing" : float
+}
+```
+
 ## Part 5 Distributed Tracing with Zipkin 
 
 ### Step 0: Zipkin Configuration already completed in the application.properties
