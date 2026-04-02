@@ -106,7 +106,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\", method=\"POST\"}[1m]))",
+          "expr": "sum(rate(http_server_requests_seconds_count{ method=\"POST\"}[1m]))",
           "legendFormat": "{{method}} {{uri}}",
           "range": true,
           "refId": "A"
@@ -231,13 +231,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\", status=~\"5..\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{ status=~\"5..\"}[1m]))",
           "legendFormat": "5xx Errors",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\", status=~\"4..\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{ status=~\"4..\"}[1m]))",
           "legendFormat": "4xx Errors",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -329,18 +333,24 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "histogram_quantile(0.50, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.50, sum(rate(http_server_requests_seconds_bucket[1m])) by (le))",
           "legendFormat": "p50",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket[1m])) by (le))",
           "legendFormat": "p95",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "histogram_quantile(0.99, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.99, sum(rate(http_server_requests_seconds_bucket[1m])) by (le))",
           "legendFormat": "p99",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -405,7 +415,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\", status=~\"5..\"}[5m])) / sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[5m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{ status=~\"5..\"}[5m])) / sum(rate(http_server_requests_seconds_count{}[5m]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -468,7 +480,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_sum{application=\"TenantApi\"}[1m])) / sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_sum{}[1m])) / sum(rate(http_server_requests_seconds_count{}[1m]))",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -538,7 +552,8 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[5m])) by (le, uri, method))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{}[5m])) by (le, uri, method))",
           "instant": true,
           "legendFormat": "{{method}} {{uri}}",
           "refId": "A"
@@ -603,7 +618,8 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(increase(http_server_requests_seconds_count{application=\"TenantApi\"}[5m])) by (status)",
+          "editorMode": "code",
+          "expr": "sum(increase(http_server_requests_seconds_count{}[5m])) by (status)",
           "instant": true,
           "legendFormat": "HTTP {{status}}",
           "refId": "A"
@@ -725,13 +741,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(rate(http_server_requests_seconds_count{application=\"TenantApi\"}[1m]))",
+          "editorMode": "code",
+          "expr": "sum(rate(http_server_requests_seconds_count{}[1m]))",
           "legendFormat": "Throughput (req/s)",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{application=\"TenantApi\"}[1m])) by (le))",
+          "editorMode": "code",
+          "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{}[1m])) by (le))",
           "legendFormat": "p95 Latency (s)",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -770,6 +790,6 @@
   "timezone": "browser",
   "title": "TenantApi — HTTP Traffic",
   "uid": "http-traffic",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
