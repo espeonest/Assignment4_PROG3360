@@ -73,6 +73,27 @@ To see the info endpoint, go to:
 
 From the official Prometheus site, make sure the correct version is installed for your machine. https://prometheus.io/download/
 
+##Part3 
+Pre requisties
+Tenant API running on:
+http://localhost:8081
+
+step 1: Start Prometheus
+Open terminal in the Prometheus directory and run:
+.\prometheus.exe --config.file=prometheus.yml
+Open Prometheus UI in browser:
+http://localhost:9090
+
+step 2: Verify Service Connection
+Go to Status → Targets
+Check the tenant-api job(status= up)
+
+step 3: Validate JVM Metrics
+Go to Graph tab
+Enter query:
+jvm_memory_used_bytes
+
+
 ## Part 5 Distributed Tracing with Zipkin 
 
 ### Step 0: Zipkin Configuration already completed in the application.properties
