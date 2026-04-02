@@ -105,18 +105,24 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{application=\"TenantApi\", area=\"heap\"}",
+          "editorMode": "code",
+          "expr": "jvm_memory_used_bytes{ area=\"heap\"}",
           "legendFormat": "{{id}} (used)",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_committed_bytes{application=\"TenantApi\", area=\"heap\"}",
+          "editorMode": "code",
+          "expr": "jvm_memory_committed_bytes{ area=\"heap\"}",
           "legendFormat": "{{id}} (committed)",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "jvm_memory_max_bytes{application=\"TenantApi\", area=\"heap\"}",
+          "editorMode": "code",
+          "expr": "jvm_memory_max_bytes{ area=\"heap\"}",
           "legendFormat": "{{id}} (max)",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -208,13 +214,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_memory_used_bytes{application=\"TenantApi\", area=\"nonheap\"}",
+          "editorMode": "code",
+          "expr": "jvm_memory_used_bytes{ area=\"nonheap\"}",
           "legendFormat": "{{id}} (used)",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "jvm_memory_committed_bytes{application=\"TenantApi\", area=\"nonheap\"}",
+          "editorMode": "code",
+          "expr": "jvm_memory_committed_bytes{ area=\"nonheap\"}",
           "legendFormat": "{{id}} (committed)",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -308,13 +318,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "process_cpu_usage{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "process_cpu_usage",
           "legendFormat": "Process CPU",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "system_cpu_usage{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "system_cpu_usage",
           "legendFormat": "System CPU",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -406,18 +420,24 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_threads_live_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_live_threads",
           "legendFormat": "Live",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "jvm_threads_daemon_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_daemon_threads",
           "legendFormat": "Daemon",
+          "range": true,
           "refId": "B"
         },
         {
-          "expr": "jvm_threads_peak_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_peak_threads",
           "legendFormat": "Peak",
+          "range": true,
           "refId": "C"
         }
       ],
@@ -509,8 +529,10 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(jvm_gc_pause_seconds_sum{application=\"TenantApi\"}[1m]) / rate(jvm_gc_pause_seconds_count{application=\"TenantApi\"}[1m])",
+          "editorMode": "code",
+          "expr": "rate(jvm_gc_pause_seconds_sum[1m]) / rate(jvm_gc_pause_seconds_count[1m])",
           "legendFormat": "{{action}} - {{cause}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -602,8 +624,10 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "rate(jvm_gc_pause_seconds_count{application=\"TenantApi\"}[1m])",
+          "editorMode": "code",
+          "expr": "rate(jvm_gc_pause_seconds_count[1m])",
           "legendFormat": "GC Rate — {{action}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -695,13 +719,17 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_classes_loaded_classes{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_classes_loaded_classes",
           "legendFormat": "Loaded Classes",
+          "range": true,
           "refId": "A"
         },
         {
-          "expr": "jvm_classes_unloaded_classes_total{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_classes_unloaded_classes_total",
           "legendFormat": "Unloaded Classes (total)",
+          "range": true,
           "refId": "B"
         }
       ],
@@ -759,7 +787,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "process_uptime_seconds{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "process_uptime_seconds",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -825,7 +855,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "jvm_threads_live_threads{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "jvm_threads_live_threads",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -888,7 +920,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "sum(jvm_memory_used_bytes{application=\"TenantApi\", area=\"heap\"}) / sum(jvm_memory_max_bytes{application=\"TenantApi\", area=\"heap\"})",
+          "editorMode": "code",
+          "expr": "sum(jvm_memory_used_bytes{ area=\"heap\"}) / sum(jvm_memory_max_bytes{ area=\"heap\"})",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -951,7 +985,9 @@
       "pluginVersion": "12.4.2",
       "targets": [
         {
-          "expr": "process_cpu_usage{application=\"TenantApi\"}",
+          "editorMode": "code",
+          "expr": "process_cpu_usage",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -990,6 +1026,6 @@
   "timezone": "browser",
   "title": "TenantApi — JVM Performance",
   "uid": "jvm-performance",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
