@@ -124,9 +124,14 @@ login using username: admin and password: admin
 
 ### Step 3
 
-click dashboards then new then import
+go to connections->prometheus->add new datasource 
+input http://localhost:9090 in Prometheus server URL click save & test
 
 ### Step 4
+
+click dashboards then new then import
+
+### Step 5
 
 import each of the grafana json files separately
 
