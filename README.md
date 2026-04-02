@@ -58,7 +58,8 @@ Open Postman to run a few api calls to populate data for Zipkin to display
   "name": "Pam Halpert",
   "address": "123 Main Street Kitchener ON",
   "email": "pam@gmail.com",
-  "rent": 2000
+  "rent": 2000,
+  "amountOwing" : 2000
 }
 
 ``` POST http://localhost:8081/api/tenants``` 
@@ -67,7 +68,8 @@ Open Postman to run a few api calls to populate data for Zipkin to display
   "name": "Jim Halpert",
   "address": "123 Main Street Kitchener ON",
   "email": "jim@gmail.com",
-  "rent": 2000
+  "rent": 2000,
+  "amountOwing" : 2000
 }
 
 ``` GET http://localhost:8081/api/tenants/205``` 
